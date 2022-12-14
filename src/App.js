@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import MoviesList from "./components/MoviesList";
 import "./App.css";
+import AddMovie from "./components/AddMovie";
 
 const App = () => {
 
@@ -41,6 +42,9 @@ const App = () => {
   return (
     <React.Fragment>
       <section>
+        <AddMovie />
+      </section>
+      <section>
         <button onClick={fetchMovieHandler}>Fetch Movies</button>
       </section>
       <section>
@@ -48,6 +52,7 @@ const App = () => {
         {!loading && movies.length === 0 && !error && <p>No Movies.</p>}
         {loading && <p>Loading....</p>}
         {!loading && error && <p>{error}</p>}
+        {/* {error && <button onClick={onCancelRequestHandler}>Cancel</button>} */}
       </section>
     </React.Fragment>
   );
