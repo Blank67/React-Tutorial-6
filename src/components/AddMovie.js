@@ -14,10 +14,10 @@ const AddMovies = (props) => {
       openingText: openingTextRef.current.value,
       releaseDate: releaseDateRef.current.value,
     }
-    titleRef.current.value = ''
-    openingTextRef.current.value = ''
-    releaseDateRef.current.value = ''
-    console.log(movie);
+    titleRef.current.value = '';
+    openingTextRef.current.value = '';
+    releaseDateRef.current.value = '';
+    props.onAdd(movie);
   }
 
   return (
